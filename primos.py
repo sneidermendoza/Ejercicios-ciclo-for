@@ -1,3 +1,5 @@
+# Este ejercicio determina si un numero es primo o no 
+
 def es_primo(numero):
     contador = 0
 
