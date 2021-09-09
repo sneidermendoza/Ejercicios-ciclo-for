@@ -11,7 +11,7 @@
 
 member = 0
 number_membes = int(input("Ingrese el numero de miembros a pesar:  "))
-# weight_accum_member = 0
+
 
 for n in range(number_membes):
     weight_accum_member = 0
