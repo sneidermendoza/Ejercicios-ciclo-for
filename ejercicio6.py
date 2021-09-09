@@ -7,19 +7,29 @@
 # es negativa, significa que bajaron. Lo que el problema requere es que por
 # cada persona se imprima un letrero que diga: “SUBIÓ” o “BAJÓ” y la
 # cantidad de kilos que subió o bajó de peso.
-weight_accum_member = 0
-actual_weight_1 = float(input("Por favor, miembro #1 ingrese su peso actual: "))
-actual_weight_2 = float(input("Por favor, miembro #2 ingrese su peso actual: "))
-actual_weight_3 = float(input("Por favor, miembro #3 ingrese su peso actual: "))
-actual_weight_4 = float(input("Por favor, miembro #4 ingrese su peso actual: "))
-actual_weight_5 = float(input("Por favor, miembro #5 ingrese su peso actual: "))
-member = 0
 
-for n in range(5):
+
+member = 0
+number_membes = int(input("Ingrese el numero de miembros a pesar:  "))
+# weight_accum_member = 0
+
+for n in range(number_membes):
+    weight_accum_member = 0
     member += 1
+    actual_weight = float(input(f"Por favor, miembro {member} ingrese su peso actual: "))
+    
     for i in range(10):
         weighing_machine = float(input(f"miembro # {member}, el peso de la bascula # {i + 1} es: "))
         weight_accum_member += weighing_machine
+    avg = weight_accum_member / 10 
 
+    if avg < actual_weight:
+        weight = "BAJO"
+    elif avg > actual_weight:
+        weight = "SUBIO" 
+    else:
+        weight = " Su peso es IGUAL"
+            
+    amount_of_kilos = round(avg - actual_weight , 2) 
 
-print(weighing_machine)
+    print(f"Miembro # {member}, {weight} {amount_of_kilos} kilos ")
